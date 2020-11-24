@@ -1,0 +1,13 @@
+.bg{
+	background-color: #fefefa;
+	background-image: url('/templeOpaqueTwo.png');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	font-family: 'Pacifico', cursive;
+	font-size: 40px;
+	font-weight: 100;
+	color: #B2A877;
+	height:80vh;
+	width: 90vw;
+}
