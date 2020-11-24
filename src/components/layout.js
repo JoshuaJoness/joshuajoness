@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Menu from "./menu"
@@ -22,10 +22,20 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const [scrolled, setScrolled] = useState(false)
+  const scrollHandler = () => {
+    if (window.scrollY !== 0) {
+      setScrolled(true)
+    } else {
+      setScrolled(false)
+    }
+  }
+  window.addEventListener('scroll', scrollHandler)
+
   return (
     <>
-      <Menu siteTitle={data.site.siteMetadata.title}></Menu>
       <div>
+      <Menu siteTitle={data.site.siteMetadata.title}></Menu>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built by
@@ -42,3 +52,7 @@ Layout.propTypes = {
 }
 
 export default Layout
+
+// {scrolled ? (
+//   <Menu siteTitle={data.site.siteMetadata.title}></Menu>
+// ) : null}

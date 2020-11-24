@@ -9,15 +9,12 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Montserrat`
-          },
-          {
-            family: `Knewave`
-          },
+          `Montserrat`,
+          `Knewave`,
+          `Pacifico`
         ]
       } 
     },

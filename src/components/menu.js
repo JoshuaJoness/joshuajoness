@@ -8,8 +8,8 @@ const Menu = ({ siteTitle }) => (
                 <h1 style={{ fontFamily: "'Knewave', cursive" , fontWeight:'light'}}><Link
           to="/">{siteTitle}</Link></h1>
                 <li><Link to="/calorieCam" style={{ fontFamily:"'Knewave', cursive", color:'#000' }}>Work</Link></li>
-                <i class="fas fa-moon">MOON</i>
-                <p>SHOP</p>
+                {/* <i class="fas fa-moon">MOON</i>
+                <p>SHOP</p> */}
             </ul>
         </div>
     )

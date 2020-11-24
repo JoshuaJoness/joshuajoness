@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import { Link } from "gatsby"
 
 import Emoji from "react-emoji-render";
@@ -9,10 +9,23 @@ import SEO from "../components/seo"
 import Header from "../components/header"
 import './index.css'
 
-const IndexPage = () => (
+const IndexPage = () => {
+  const [scrolled, setScrolled] = useState(false)
+  const scrollHandler = () => {
+    if (window.scrollY !== 0) {
+      setScrolled(true)
+    } else {
+      setScrolled(false)
+    }
+  }
+  window.addEventListener('scroll', scrollHandler)
+
+
+  return (
   <Layout>
     <SEO title="Home" />
-    <div className='bg' style={{ display:'block', margin:'auto', marginTop:15 }}></div>
+    <div className='bg' style={{ display: 'block', margin:'auto', color: '#F7C18B' }}>
+    </div>
     <main style={{ 
             display:'flex', 
             flexDirection:'column', 
@@ -21,7 +34,7 @@ const IndexPage = () => (
             paddingRight:'25%', 
             textAlign: 'justify',
             marginBottom:'25%',
-            marginTop:'4%' 
+            marginTop:'4%',
             }}>
             <h1 style={{ fontFamily:"'Knewave', cursive", color:'#000' }}>Hi there, I'm Joshua <Emoji text=":waving_hand:" /></h1>
             <div style={{ fontFamily:'Knewave', color:'#000', fontSize:25, textAlign:'center', lineHeight: 2, width: '60vw' }}>
@@ -46,6 +59,6 @@ const IndexPage = () => (
             {/* style={{color:'#313638'}} */}
         </main>
   </Layout>
-)
+)}
 
 export default IndexPage
